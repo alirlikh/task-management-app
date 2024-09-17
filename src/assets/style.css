@@ -1,0 +1,46 @@
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+button {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.task-body {
+  color: #757575;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+
+  @media (min-width: 576px) {
+    font-size: 1rem;
+    /* font-weight: 400; */
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    /* font-weight: 400; */
+  }
+
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+    /* font-weight: 400; */
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.5rem;
+    /* font-weight: 400; */
+  }
+}

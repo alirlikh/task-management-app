@@ -1,6 +1,7 @@
 import React from "react"
 import TaskItem from "../TaskItem/TaskItem"
 import { Button, Col, Row } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const TaskList = ({ searchQuery }) => {
   const taskList = [
@@ -56,9 +57,15 @@ const TaskList = ({ searchQuery }) => {
               <TaskItem task={task} />
             </Col>
           ))}
-        <Button style={{ background: "rgb(151, 71, 255)" }} className="my-5 mx-3">
-          Craete New Task
-        </Button>
+        {/* <Button style={{ background: "rgb(151, 71, 255)" }} className="my-5 mx-3"> */}
+        <Link
+          to={"/create"}
+          className="btn my-5 mx-3 text-white"
+          style={{ background: "rgb(151, 71, 255)" }}
+        >
+          Create New Task
+        </Link>
+        {/* </Button> */}
       </Row>
     </>
   )
