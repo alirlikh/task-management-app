@@ -11,17 +11,15 @@ export const renderRoutes   = (route) =>{
     </Routes>
   </Suspense>
 
-
 }
 
-
-routes = [
+const routes = [
   {
-    Path:"/" , element:<>home</>
+    Path:"/" , element:lazy(()=> import("./Pages/Main"))
   },{
-    Path:"add" , element:<>add</>
+    Path:"add" , element:lazy(()=> import("./Pages/AddTask"))
   },{
-    Path:"/edite/:id" , element:<>edite</>
+    Path:"/edite/:id" , element:lazy(()=> import("./Pages/EditeTask"))
   },{
     Path:"*" , element:<>Not Found!</>
   },
