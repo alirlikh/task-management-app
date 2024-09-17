@@ -1,28 +1,32 @@
 import React ,{Suspense , lazy} from 'react'
 import {Route , Routes} from "react-router-dom"
 
-export const renderRoutes   = (route) =>{
+export const renderRoutes = (route) =>{
 
-  <Suspense fallback={<>loading...</>}>
+  return(  <Suspense fallback={<>loading...</>}>
     <Routes>
       {route.map((eachRoute , index) => (
         <Route key={index} path={eachRoute.path} element={eachRoute.element}/>
       ))}
     </Routes>
   </Suspense>
-
+)
 }
+
+const Main = lazy(()=> import("./Pages/Main"))
+const AddTask = lazy(()=> import("./Pages/AddTask"))
+const EditeTask = lazy(()=> import("./Pages/EditeTask"))
 
 const routes = [
   {
-    Path:"/" , element:lazy(()=> import("./Pages/Main"))
+    path: "/", element:<Main/>
   },{
-    Path:"add" , element:lazy(()=> import("./Pages/AddTask"))
+    path:"add" , element:<AddTask/>
   },{
-    Path:"/edite/:id" , element:lazy(()=> import("./Pages/EditeTask"))
+    path:"/edite/:id" , element:<EditeTask/>
   },{
-    Path:"*" , element:<>Not Found!</>
-  },
+    path:"*" , element:<>Not Found!</>
+  }
 ]
 
 export default routes
