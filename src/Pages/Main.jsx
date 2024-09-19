@@ -27,7 +27,12 @@ const Main = () => {
               value={searchValue}
               onChange={saveQuery}
             />
-            <Button variant="btn btn-primary" id="search-btn" onClick={handleSearch}>
+            <Button
+              variant="btn "
+              style={{ background: "rgb(151, 71, 255)" }}
+              id="search-btn"
+              onClick={handleSearch}
+            >
               <img src={search} alt="search" width={20} />
             </Button>
           </InputGroup>
