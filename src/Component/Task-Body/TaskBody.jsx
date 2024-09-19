@@ -18,10 +18,12 @@ const TaskBody = () => {
   const [taskDesc, setTaskDesc] = useState("")
 
   useEffect(() => {
-    if (!task) {
-      dispatch(fetchOneTask(id))
-    } else {
-      setTaskName(task.todo)
+    if (!!id) {
+      if (!task) {
+        dispatch(fetchOneTask(id))
+      } else {
+        setTaskName(task.todo)
+      }
     }
   }, [id, dispatch, task])
 
