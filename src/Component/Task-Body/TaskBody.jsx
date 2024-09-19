@@ -47,7 +47,7 @@ const TaskBody = () => {
         .catch((e) => {
           Swal.fire({
             title: "Error!",
-            text: "Have Not Deleted!",
+            text: "Have Not Edited!",
             icon: "error"
           })
         })

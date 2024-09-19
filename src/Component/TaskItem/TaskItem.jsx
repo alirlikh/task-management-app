@@ -30,7 +30,13 @@ const TaskItem = ({ task }) => {
             text: "Your Task has been deleted.",
             icon: "success"
           })
-        } catch (error) {}
+        } catch (error) {
+          Swal.fire({
+            title: "Error!",
+            text: "Have Not Deleted!",
+            icon: "error"
+          })
+        }
       }
     })
   }
