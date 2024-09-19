@@ -6,12 +6,13 @@ import { Edite } from "../Icon/Edite"
 import { Trash } from "../Icon/Trash"
 import { Link } from "react-router-dom"
 import Swal from "sweetalert2"
-import { deleteTask } from "../../Store/TaskSlice"
+import { deleteTask, markAsRead } from "../../Store/TaskSlice"
 import { useDispatch, useSelector } from "react-redux"
 
 const TaskItem = ({ task }) => {
   const dispatch = useDispatch()
-  const deleteHandler = (taskId) => {
+  const { items, status, error } = useSelector((state) => state.tasks)
+  const deleteHandler = () => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -34,18 +35,22 @@ const TaskItem = ({ task }) => {
     })
   }
 
+  const markedHandler = () => {
+    dispatch(markAsRead(task))
+  }
+
   return (
     <Row
-      className="align-items-center rounded-5 mx-2 my-3 p-1 px-4"
+      className="align-items-center rounded-5 mx-2 my-3 p-1 px-4 task-item"
       style={{
-        border: "1px solid rgba(117,117,117,77%) ",
-        background: `${task.completed ? "rgba(206, 255, 218,51%)" : ""}`,
-        height: "14rem"
+        background: `${task.completed ? "rgba(206, 255, 218,51%)" : ""}`
       }}
     >
       <Col xs={2} className="d-flex justify-content-center align-items-center">
         <span>
-          <button className="btn">{task.completed ? <Mark /> : <Circle />}</button>
+          <button className="btn" onClick={markedHandler} disabled={task.completed}>
+            {task.completed ? <Mark /> : <Circle />}
+          </button>
         </span>
       </Col>
       <Col xs={8} className="p-3">
