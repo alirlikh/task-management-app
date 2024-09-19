@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import TaskItem from "../TaskItem/TaskItem"
-import { Alert, Button, Col, Row } from "react-bootstrap"
+import { Alert, Col, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { fetchTasks } from "../../Store/TaskSlice"
