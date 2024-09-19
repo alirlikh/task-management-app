@@ -16,8 +16,36 @@ button {
   border: none !important;
 }
 
+.input-border {
+  border: 1px solid rgba(117, 117, 117, 77%);
+}
+
 .task-body {
   color: #757575;
+
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+
+.task-item {
+  height: 14rem;
+  border: 1px solid rgba(117, 117, 117, 77%);
+  width: 100%;
+  @media (max-width: 576px) {
+    height: auto;
+    min-height: 14rem;
+  }
+}
+
+.task-title {
+  @media (max-width: 576px) {
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .title {
@@ -26,21 +54,17 @@ button {
 
   @media (min-width: 576px) {
     font-size: 1rem;
-    /* font-weight: 400; */
   }
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
-    /* font-weight: 400; */
   }
 
   @media (min-width: 992px) {
     font-size: 1.5rem;
-    /* font-weight: 400; */
   }
 
   @media (min-width: 1200px) {
     font-size: 1.5rem;
-    /* font-weight: 400; */
   }
 }

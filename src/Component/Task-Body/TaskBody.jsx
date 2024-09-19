@@ -82,7 +82,7 @@ const TaskBody = () => {
             <Form.Control
               type="text"
               placeholder="Task"
-              style={{ border: "1px solid rgba(117,117,117,77%) " }}
+              className="input-border "
               required
               value={taskName}
               onChange={handleNameValue}
@@ -92,9 +92,9 @@ const TaskBody = () => {
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"
+              className="input-border "
               placeholder="say something..."
               rows={5}
-              style={{ border: "1px solid rgba(117,117,117,77%) " }}
               required
               value={taskDesc}
               onChange={handleDescValue}

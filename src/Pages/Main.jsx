@@ -38,7 +38,7 @@ const Main = () => {
           </InputGroup>
         </Col>
       </Row>
-      <Row>
+      <Row className="justify-content-center">
         <TaskList searchQuery={searchQuery} />
       </Row>
     </>

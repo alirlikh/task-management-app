@@ -45,11 +45,13 @@ const TaskList = ({ searchQuery }) => {
   const error = useSelector((state) => state.tasks.error)
 
   useEffect(() => {
-    if (taskStatus === "idle") dispatch(fetchTasks())
-  }, [taskStatus, dispatch])
+    // if (taskStatus === "idle")
+    dispatch(fetchTasks())
+    console.log("call fetch")
+  }, [dispatch])
 
-  if (taskStatus === "loading") return <div>pending...</div>
-  if (taskStatus === "error") return <div>{error}</div>
+  if (taskStatus === "loading") return <div className="text-center pt-5 fw-1 fs-3 ">loading...</div>
+  if (taskStatus === "error") return <div className="text-center pt-5 fw-1 fs-3 ">{error}</div>
 
   return (
     <>
