@@ -1,4 +1,6 @@
 import React from "react"
+import TaskBody from "../Component/Task-Body/TaskBody"
+import { Col, Row } from "react-bootstrap"
 
 const EditeTask = () => {
   return (

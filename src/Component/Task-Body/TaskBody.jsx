@@ -1,18 +1,71 @@
-import React, { useState } from "react"
-import { Button, Col, Row } from "react-bootstrap"
+import React, { useEffect, useState } from "react"
+import { Button, Col, Row, Spinner } from "react-bootstrap"
 import Form from "react-bootstrap/Form"
+import { addTask, fetchOneTask, editTask } from "../../Store/TaskSlice"
+import { useDispatch, useSelector } from "react-redux"
+import Swal from "sweetalert2"
+import { useParams, useNavigate } from "react-router-dom"
 
-const TaskBody = ({ initialValue }) => {
-  const [taskName, setTaskName] = useState(initialValue ? initialValue.title : "")
-  const [taskDesc, setTaskDesc] = useState(initialValue ? initialValue.description : "")
+const TaskBody = () => {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const { items, error, status } = useSelector((state) => state.tasks)
+  const dispatch = useDispatch()
+  const task = items.find((task) => task.id == id)
+
+  // const [taskName, setTaskName] = useState(initialValue ? initialValue.title : "")
+  const [taskName, setTaskName] = useState("")
+  const [taskDesc, setTaskDesc] = useState("")
+
+  useEffect(() => {
+    if (!task) {
+      dispatch(fetchOneTask(id))
+    } else {
+      setTaskName(task.todo)
+    }
+  }, [id, dispatch, task])
 
   const handleNameValue = (e) => {
     setTaskName(e.target.value)
-    console.log(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!!id) {
+      const updatedTask = { id: task.id, todo: taskName, completed: false }
+      dispatch(editTask(updatedTask))
+        .then(() => {
+          Swal.fire({
+            title: "success!",
+            text: "upadated successfully!",
+            icon: "success"
+          })
+          navigate("/")
+        })
+        .catch((e) => {
+          Swal.fire({
+            title: "Error!",
+            text: "Have Not Deleted!",
+            icon: "error"
+          })
+        })
+    } else {
+      dispatch(
+        addTask({
+          todo: taskName,
+          completed: false,
+          userId: Math.random()
+        })
+      ).then(() => {
+        Swal.fire({
+          title: "success!",
+          text: "create the task is successfull!",
+          icon: "success"
+        })
+        setTaskName("")
+        navigate("/")
+      })
+    }
   }
 
   const handleDescValue = (e) => {
@@ -52,8 +105,10 @@ const TaskBody = ({ initialValue }) => {
               type="submit"
               style={{ background: "rgb(151, 71, 255)" }}
               className="my-5 w-100"
+              disabled={status === "pending"}
             >
-              {initialValue ? "Edite" : "Create"}
+              {/* <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> */}
+              {id ? "Edite" : "Create"}
             </Button>
           </div>
         </Form>
