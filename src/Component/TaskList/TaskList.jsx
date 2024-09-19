@@ -27,11 +27,16 @@ const TaskList = ({ searchQuery }) => {
 
   return (
     <>
-      <h2 className="title m-3 p-1 mt-5 ml-4">Today's Task</h2>
+      <Row>
+        <Col>
+          <h2 className="title p-1 mt-5 ml-5">Today's Task</h2>
+        </Col>
+      </Row>
+
       <Row className="flex-md-row justify-content-center">
         {filtredTask && filtredTask.length > 0 ? (
           filtredTask.map((task) => (
-            <Col key={task.id} xs={12} md={6}>
+            <Col key={task.id} xs={12} md={6} className="d-flex">
               <TaskItem task={task} />
             </Col>
           ))
@@ -40,13 +45,6 @@ const TaskList = ({ searchQuery }) => {
             <span>Oops! Your Task Not Found.</span>
           </Alert>
         )}
-        <Link
-          to={"/create"}
-          className="btn my-5 mx-3 text-white"
-          style={{ background: "rgb(151, 71, 255)" }}
-        >
-          Create New Task
-        </Link>
       </Row>
     </>
   )
