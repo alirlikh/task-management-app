@@ -2,17 +2,17 @@ import React, { useState } from "react"
 import search from "../assets/search.svg"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import InputGroup from "react-bootstrap/InputGroup"
-import TaskItem from "../Component/TaskItem/TaskItem"
 import TaskList from "../Component/TaskList/TaskList"
 
 const Main = () => {
   const [searchQuery, setSearchQuery] = useState("")
+  const [searchValue, setSearchValue] = useState("")
   const saveQuery = (e) => {
-    setSearchQuery(e.target.value)
+    setSearchValue(e.target.value)
   }
 
   const handleSearch = () => {
-    console.log(searchQuery)
+    setSearchQuery(searchValue)
   }
 
   return (
@@ -24,10 +24,10 @@ const Main = () => {
               placeholder="Search"
               aria-label="Search"
               aria-describedby="search-btn"
-              value={searchQuery}
+              value={searchValue}
               onChange={saveQuery}
             />
-            <Button variant="outline-secondary" id="search-btn" onClick={handleSearch}>
+            <Button variant="btn btn-primary" id="search-btn" onClick={handleSearch}>
               <img src={search} alt="search" width={20} />
             </Button>
           </InputGroup>
