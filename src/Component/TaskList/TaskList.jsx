@@ -46,7 +46,7 @@ const TaskList = ({ searchQuery }) => {
 
   useEffect(() => {
     if (taskStatus === "idle") dispatch(fetchTasks())
-  }, [])
+  }, [taskStatus, dispatch])
 
   if (taskStatus === "loading") return <div>pending...</div>
   if (taskStatus === "error") return <div>{error}</div>
@@ -55,7 +55,7 @@ const TaskList = ({ searchQuery }) => {
     <>
       <h2 className="title m-3 p-1 mt-5 ml-4">Today's Task</h2>
       <Row className="flex-md-row ">
-        {tasks.todos
+        {tasks
           ?.filter((task) =>
             // task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             // task.description.toLowerCase().includes(searchQuery.toLowerCase())

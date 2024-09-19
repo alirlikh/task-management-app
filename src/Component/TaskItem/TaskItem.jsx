@@ -5,8 +5,35 @@ import { Circle } from "../Icon/Circle"
 import { Edite } from "../Icon/Edite"
 import { Trash } from "../Icon/Trash"
 import { Link } from "react-router-dom"
+import Swal from "sweetalert2"
+import { deleteTask } from "../../Store/TaskSlice"
+import { useDispatch, useSelector } from "react-redux"
 
 const TaskItem = ({ task }) => {
+  const dispatch = useDispatch()
+  const deleteHandler = (taskId) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#9747FF",
+      cancelButtonColor: "#FF5757",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        try {
+          dispatch(deleteTask(task.id))
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Task has been deleted.",
+            icon: "success"
+          })
+        } catch (error) {}
+      }
+    })
+  }
+
   return (
     <Row
       className="align-items-center rounded-5 mx-2 my-3 p-1 px-4"
@@ -39,7 +66,9 @@ const TaskItem = ({ task }) => {
             </Link>
           </span>
           <span>
-            <Trash />
+            <button className="btn p-0 m-0" onClick={deleteHandler}>
+              <Trash />
+            </button>
           </span>
         </div>
       </Col>
