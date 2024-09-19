@@ -23,7 +23,7 @@ const TaskList = ({ searchQuery }) => {
   }, [dispatch])
 
   if (taskStatus === "loading") return <div className="text-center pt-5 fw-1 fs-3 ">loading...</div>
-  if (taskStatus === "error") return <div className="text-center pt-5 fw-1 fs-3 ">{error}</div>
+  if (taskStatus === "failed") return <div className="text-center pt-5 fw-1 fs-3 ">{error} </div>
 
   return (
     <>
