@@ -110,7 +110,7 @@ const TaskBody = () => {
               variant="purple"
             >
               {/* <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> */}
-              {id ? "Edite" : "Create"}
+              {id ? "Edit" : "Create"}
             </Button>
           </div>
         </Form>

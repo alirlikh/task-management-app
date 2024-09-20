@@ -1,4 +1,4 @@
-export const Edite = (props) => {
+export const Edit = (props) => {
   return (
     <svg
       width="18"

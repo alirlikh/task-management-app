@@ -2,7 +2,7 @@ import React from "react"
 import { Col, Row } from "react-bootstrap"
 import { Mark } from "../Icon/Mark"
 import { Circle } from "../Icon/Circle"
-import { Edite } from "../Icon/Edite"
+import { Edit } from "../Icon/Edit"
 import { Trash } from "../Icon/Trash"
 import { Link } from "react-router-dom"
 import Swal from "sweetalert2"
@@ -77,8 +77,8 @@ const TaskItem = ({ task }) => {
       <Col xs={2}>
         <div className="d-flex flex-row flex-md-column justify-content-around gap-3">
           <span>
-            <Link to={`/edite/${task.id}`} aria-label="edite task">
-              <Edite />
+            <Link to={`/edit/${task.id}`} aria-label="edit task">
+              <Edit />
             </Link>
           </span>
           <span>
