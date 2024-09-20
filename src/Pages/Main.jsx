@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import search from "../assets/search.svg"
+import { Search } from "../Component/Icon/Search"
 import { Button, Col, Form, Row } from "react-bootstrap"
 import InputGroup from "react-bootstrap/InputGroup"
 import TaskList from "../Component/TaskList/TaskList"
@@ -37,7 +37,7 @@ const Main = () => {
               id="search-btn"
               onClick={handleSearch}
             >
-              <img src={search} alt="search" width={20} />
+              <Search width={20} height={20} />
             </Button>
           </InputGroup>
         </Col>
