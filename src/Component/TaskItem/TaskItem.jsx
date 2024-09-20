@@ -54,7 +54,12 @@ const TaskItem = ({ task }) => {
     >
       <Col xs={2} className="d-flex justify-content-center align-items-center">
         <span>
-          <button className="btn" onClick={markedHandler} disabled={task.completed}>
+          <button
+            className="btn"
+            onClick={markedHandler}
+            disabled={task.completed}
+            aria-label="task marked"
+          >
             {task.completed ? <Mark /> : <Circle />}
           </button>
         </span>
@@ -72,12 +77,12 @@ const TaskItem = ({ task }) => {
       <Col xs={2}>
         <div className="d-flex flex-row flex-md-column justify-content-around gap-3">
           <span>
-            <Link to={`/edite/${task.id}`}>
+            <Link to={`/edite/${task.id}`} aria-label="edite task">
               <Edite />
             </Link>
           </span>
           <span>
-            <button className="btn p-0 m-0" onClick={deleteHandler}>
+            <button className="btn p-0 m-0" onClick={deleteHandler} aria-label="delete task">
               <Trash />
             </button>
           </span>

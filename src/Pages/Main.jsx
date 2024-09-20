@@ -42,7 +42,11 @@ const Main = () => {
         <TaskList searchQuery={searchQuery} />
         <Row className="justify-content-center">
           <div className="d-flex">
-            <Link to={"/create"} className="btn btn-purple my-5 mx-3 text-white px-4 w-100">
+            <Link
+              to={"/create"}
+              className="btn btn-purple my-5 mx-3 text-white px-4 w-100"
+              aria-label="go to create task page"
+            >
               <span>Create New Task</span>
             </Link>
           </div>
