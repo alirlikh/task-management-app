@@ -27,7 +27,7 @@ const routes = [
     element: <AddTask />
   },
   {
-    path: "/edite/:id",
+    path: "/edit/:id",
     element: <EditeTask />
   },
   {
