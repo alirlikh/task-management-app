@@ -11,7 +11,7 @@ const TaskBody = () => {
   const navigate = useNavigate()
   const { items, error, status } = useSelector((state) => state.tasks)
   const dispatch = useDispatch()
-  const task = items.find((task) => task.id == id)
+  const task = items.find((task) => task.id === id)
 
   // const [taskName, setTaskName] = useState(initialValue ? initialValue.title : "")
   const [taskName, setTaskName] = useState("")
