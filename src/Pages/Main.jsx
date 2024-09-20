@@ -4,6 +4,8 @@ import { Button, Col, Form, Row } from "react-bootstrap"
 import InputGroup from "react-bootstrap/InputGroup"
 import TaskList from "../Component/TaskList/TaskList"
 import { Link } from "react-router-dom"
+import { AppInfo } from "../Constant/Constant"
+import InfoCard from "../Component/InfoCard/InfoCard"
 
 const Main = () => {
   const [searchQuery, setSearchQuery] = useState("")
@@ -18,6 +20,7 @@ const Main = () => {
 
   return (
     <>
+      <InfoCard infoType={AppInfo} />
       <Row>
         <Col className="mx-3 mt-5">
           <InputGroup className="">
@@ -39,6 +42,7 @@ const Main = () => {
           </InputGroup>
         </Col>
       </Row>
+
       <Row className="justify-content-center">
         <TaskList searchQuery={searchQuery} />
         <Row className="justify-content-center">
