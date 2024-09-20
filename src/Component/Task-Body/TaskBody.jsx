@@ -105,9 +105,9 @@ const TaskBody = () => {
           <div className="col-12 col-md-6 mx-auto">
             <Button
               type="submit"
-              style={{ background: "rgb(151, 71, 255)" }}
               className="my-5 w-100"
               disabled={status === "pending"}
+              variant="purple"
             >
               {/* <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> */}
               {id ? "Edite" : "Create"}

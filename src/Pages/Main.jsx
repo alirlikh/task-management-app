@@ -31,12 +31,7 @@ const Main = () => {
               value={searchValue}
               onChange={saveQuery}
             />
-            <Button
-              variant="btn "
-              style={{ background: "rgb(151, 71, 255)" }}
-              id="search-btn"
-              onClick={handleSearch}
-            >
+            <Button variant="purple" id="search-btn" onClick={handleSearch}>
               <Search width={20} height={20} />
             </Button>
           </InputGroup>
@@ -47,11 +42,7 @@ const Main = () => {
         <TaskList searchQuery={searchQuery} />
         <Row className="justify-content-center">
           <div className="d-flex">
-            <Link
-              to={"/create"}
-              className="btn my-5 mx-3 text-white px-4 w-100"
-              style={{ background: "rgb(151, 71, 255)" }}
-            >
+            <Link to={"/create"} className="btn btn-purple my-5 mx-3 text-white px-4 w-100">
               <span>Create New Task</span>
             </Link>
           </div>
