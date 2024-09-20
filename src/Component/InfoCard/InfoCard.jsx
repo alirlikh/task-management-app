@@ -16,6 +16,7 @@ const InfoCard = ({ infoType }) => {
           onClick={collapseHandler}
           aria-controls="info-text"
           aria-expanded={collapseOpen}
+          aria-label="info"
         >
           <LightBulb />
         </button>
