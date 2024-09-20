@@ -20,6 +20,10 @@ button {
   border: 1px solid rgba(117, 117, 117, 77%);
 }
 
+.title-line {
+  border-bottom: 1px solid rgba(117, 117, 117, 77%);
+}
+
 .task-body {
   color: #757575;
 
