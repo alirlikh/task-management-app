@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Button, Col, Row, Spinner } from "react-bootstrap"
+import { Button, Col, Row } from "react-bootstrap"
 import Form from "react-bootstrap/Form"
 import { addTask, fetchOneTask, editTask } from "../../Store/TaskSlice"
 import { useDispatch, useSelector } from "react-redux"
@@ -9,7 +9,7 @@ import { useParams, useNavigate } from "react-router-dom"
 const TaskBody = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { items, error, status } = useSelector((state) => state.tasks)
+  const { items, status } = useSelector((state) => state.tasks)
   const dispatch = useDispatch()
   const task = items.find((task) => task.id === id)
 

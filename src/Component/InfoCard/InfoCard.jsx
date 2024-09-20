@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Alert, Card, Col, Collapse, Row } from "react-bootstrap"
+import { Alert, Col, Collapse, Row } from "react-bootstrap"
 import { LightBulb } from "../Icon/LightBulb"
 
 const InfoCard = ({ infoType }) => {

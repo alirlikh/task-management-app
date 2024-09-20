@@ -7,11 +7,11 @@ import { Trash } from "../Icon/Trash"
 import { Link } from "react-router-dom"
 import Swal from "sweetalert2"
 import { deleteTask, markAsRead } from "../../Store/TaskSlice"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 const TaskItem = ({ task }) => {
   const dispatch = useDispatch()
-  const { items, status, error } = useSelector((state) => state.tasks)
+  // const { items, status, error } = useSelector((state) => state.tasks)
   const deleteHandler = () => {
     Swal.fire({
       title: "Are you sure?",
