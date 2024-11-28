@@ -15,8 +15,6 @@
 - [📖 Usage](#-usage)  
 - [🛠️ State Management with Redux](#️-state-management-with-redux)  
 - [🤝 Contributing](#-contributing)  
-- [📜 License](#-license)  
-- [📷 Screenshots](#-screenshots)  
 
 ---
 
@@ -82,7 +80,7 @@ Follow these steps to set up and run the project locally:
 
 ## 📖 Usage
 
-  Open the app in your browser or visit the Live Demo.
+  Open the app in your browser or visit the [Live Demo](https://symphonious-heliotrope-aeeef1.netlify.app/).
 
   Add a Task: Use the form to create a new task.
 
@@ -91,6 +89,8 @@ Follow these steps to set up and run the project locally:
   Mark as Completed: Sign off tasks when done.
 
   Delete a Task: Remove unnecessary tasks with a click.
+
+  Search Tasks: Use the search bar to filter and find tasks by their title or description.
 
 ---
 ## 🛠️ State Management with Redux
@@ -130,16 +130,10 @@ Follow these steps to set up and run the project locally:
 
 
 ---
- ## 📷 Screenshots
 
- 
-  Add screenshots here to showcase the app's interface and features.
-
----
 
 
 🎉 Thank you for exploring this project! Let me know if you have any feedback or suggestions to improve it further. 🚀
-
 
 This updated version includes:  
 - Emojis for a modern and engaging look.  
